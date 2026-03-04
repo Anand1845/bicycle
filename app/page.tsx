@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Land from "./components/Land";
 
 export default function HeroSection() {
   return (
@@ -20,7 +21,7 @@ export default function HeroSection() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="/land.jpeg"
+            src="/l1.jpeg"
             alt="Cyclist in city"
             fill
             className="object-cover opacity-80"
@@ -47,7 +48,7 @@ export default function HeroSection() {
         </motion.div>
 
       </section>
-
+         <Land/>
       <Footer />
     </>
   );

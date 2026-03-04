@@ -1,107 +1,87 @@
-import Link from 'next/link';
-import { FaInstagram, FaFacebookF } from 'react-icons/fa'; // Install react-icons
-import { FaThreads, FaXTwitter } from 'react-icons/fa6';
+import React from 'react';
+import { Facebook, Twitter, Youtube, Linkedin } from 'lucide-react';
 
-export default function Footer() {
+const Footer = () => {
+  const footerData = {
+    topPages: ["Our Journey", "Accreditations & Certification", "Our Differentiations", "Culture", "Our Uniqueness"],
+    expertises: ["Program Management", "Casting Design", "Welding", "Special Process"],
+    services: ["Investment Casting", "Ceramic Core", "Gravity Die Casting", "Low Pressure Casting", "Sand Casting", "Machine and Assembly", "Plaster Mould Casting"],
+    industries: ["Aerospace", "Automotive", "Energy"],
+    others: ["Contact", "Corporate Address", "Plant Address", "Enquiry", "Downloads"]
+  };
+
   return (
-    <footer className="bg-black text-white py-16 px-6 md:px-12 font-sans">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+    <footer className="bg-[#0077be] text-white pt-12 pb-6 px-6 md:px-16 font-sans">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         
-        {/* Brand Section */}
-        <div className="lg:col-span-1">
-          <h2 className="text-3xl font-black italic tracking-tighter mb-6">
-            GEEKAY
-          </h2>
-          <p className="text-sm leading-relaxed text-gray-300 mb-8 max-w-xs">
-            Geekay Bikes is dedicated to providing high-quality products to its customers at affordable prices while maintaining the highest standards of customer service since 1961. Since then we have never stopped making improvements to our products. We sell our products under our flagship brand "GEEKAY".
-          </p>
-          <div className="flex gap-4 pt-4 border-t border-zinc-800">
-            <Link href="#" className="hover:text-red-500 transition-colors">
-                <FaInstagram size={24} />
-            </Link>
+        {/* Column 1: Top Pages & Expertises */}
+        <div className="space-y-12">
+          <section>
+            <h3 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2 inline-block min-w-30">Top Pages</h3>
+            <ul className="space-y-2 text-sm opacity-90">
+              {footerData.topPages.map(item => <li key={item} className="hover:underline cursor-pointer">{item}</li>)}
+            </ul>
+          </section>
+          <section>
+            <h3 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2 inline-block min-w-30">Expertises</h3>
+            <ul className="space-y-2 text-sm opacity-90">
+              {footerData.expertises.map(item => <li key={item} className="hover:underline cursor-pointer">{item}</li>)}
+            </ul>
+          </section>
+        </div>
 
-            <Link href="#" className="hover:text-red-500 transition-colors">
-                <FaFacebookF size={24} />
-            </Link>
+        {/* Column 2: Services & Industries */}
+        <div className="space-y-12">
+          <section>
+            <h3 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2 inline-block min-w-30">Services</h3>
+            <ul className="space-y-2 text-sm opacity-90">
+              {footerData.services.map(item => <li key={item} className="hover:underline cursor-pointer">{item}</li>)}
+            </ul>
+          </section>
+          <section>
+            <h3 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2 inline-block min-w-30">Industries</h3>
+            <ul className="space-y-2 text-sm opacity-90">
+              {footerData.industries.map(item => <li key={item} className="hover:underline cursor-pointer">{item}</li>)}
+            </ul>
+          </section>
+        </div>
 
-            <Link href="#" className="hover:text-red-500 transition-colors">
-                <FaXTwitter size={24} />
-            </Link>
+        {/* Column 3: Others */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2 inline-block min-w-30">Others</h3>
+          <ul className="space-y-2 text-sm opacity-90">
+            {footerData.others.map(item => <li key={item} className="hover:underline cursor-pointer">{item}</li>)}
+          </ul>
+        </div>
 
-            <Link href="#" className="hover:text-red-500 transition-colors">
-                <FaThreads size={24} />
-            </Link>
-            </div>
+        {/* Column 4: Social Media */}
+        <div className="flex flex-col items-start md:items-end">
+          <div className="flex items-center gap-2 mb-6 cursor-pointer hover:underline">
+            <span className="font-medium text-sm">Find us on social media</span>
+            <span className="text-xs">▶</span>
           </div>
-
-        {/* About Us */}
-        <div>
-          <h3 className="font-bold text-lg mb-6 uppercase">About Us</h3>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li><Link href="#" className="hover:text-white transition-colors">OUR STORY</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">BLOGS</Link></li>
-          </ul>
-        </div>
-
-        {/* Collection */}
-        <div>
-          <h3 className="font-bold text-lg mb-6 uppercase">Collection</h3>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Mountain Bikes</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Kids Cycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Electric Bikes</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Electric Cycle Kits</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Hybrid Bicycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Ladies Cycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Men's Cycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Fat Tyre Cycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Geared Cycles</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">City Cycle</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">700C Cycle</Link></li>
-          </ul>
-        </div>
-
-        {/* Help */}
-        <div>
-          <h3 className="font-bold text-lg mb-6 uppercase">Help</h3>
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Shipping & Return</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Terms & Conditions</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Register/Claim Warranty</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Frequently Asked Questions (FAQs)</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Influencer Program</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Become a Dealer</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors uppercase">Register a Complaint</Link></li>
-          </ul>
-        </div>
-
-        {/* Connect */}
-        <div>
-          <h3 className="font-bold text-lg mb-6 uppercase">Connect</h3>
-          <div className="space-y-6 text-sm">
-            <div>
-              <p className="text-gray-400 uppercase mb-1">Contact Us</p>
-              <p className="font-bold">Assemblies & Service :</p>
-              <p className="text-gray-300 font-medium">+91 826-481-9999</p>
-            </div>
-            <div>
-              <p className="font-bold">Sales Enquiry :</p>
-              <p className="text-gray-300 font-medium">+91 826-481-9999</p>
-            </div>
-            <div>
-              <p className="font-bold">Enquiry</p>
-              <p className="text-gray-300 font-medium lowercase">care@geekaybikes.com</p>
-            </div>
+          <div className="flex gap-4">
+            <Facebook className="w-6 h-6 cursor-pointer hover:text-blue-200" />
+            <Twitter className="w-6 h-6 cursor-pointer hover:text-blue-200" />
+            <Youtube className="w-6 h-6 cursor-pointer hover:text-blue-200" />
+            <Linkedin className="w-6 h-6 cursor-pointer hover:text-blue-200" />
           </div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="mt-16 pt-8 border-t border-zinc-900 text-center text-xs text-gray-500">
-        <p>© 2026 Geekay Bikes All Rights Reserved. Terms & Conditions</p><br/>
-        <p>Developed By D.W Innovation Pvt.Ltd.</p>
+      {/* Bottom Bar */}
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-90">
+        <p>Copyright © 2021 ABI-Showatech India Limited | All rights reserved</p>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <a href="#" className="hover:underline">Terms of Use</a>
+          <a href="#" className="hover:underline">Privacy Policy</a>
+          <a href="#" className="hover:underline">Developer Notes</a>
+          <a href="#" className="hover:underline">Acknowledgment</a>
+          <a href="#" className="hover:underline">Site Map</a>
+        </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
